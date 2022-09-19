@@ -5,16 +5,13 @@ const productRouter = express.Router();
 //routes
 productRouter
   .route("/")
- // .all(authController.protect)
+  .all(authController.protect)
   .get(productController.getAllProducts)
   .post(productController.addProduct);
 productRouter
   .route("/:id")
-  //.all(authController.protect)
+  .all(authController.protect)
   .get(productController.getProductById)
   .delete(productController.eliminarProductoPorId)
   .put(productController.editarProductoPorId);;
-
-
-
 module.exports = productRouter;

@@ -5,11 +5,11 @@ const authController = require("./../controllers/authController");
 //routes
 userRouter
   .route("/")
-  //.all(authController.protect)
+  .all(authController.protect)
   .get(userController.listarUsuarios)
   .post(userController.addUser);
   userRouter.route("/:id")
-      //      .all(authController.protect)
+            .all(authController.protect)
             .get(userController.obtenerUsuarioPorId)
             .put(userController.editarUsuarioPorId)
             .delete(userController.eliminarUsuarioPorId);
